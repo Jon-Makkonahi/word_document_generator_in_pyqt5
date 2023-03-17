@@ -18,7 +18,7 @@ Cтруктура файлов
 Установка:
 1. Склонируйте репозиторий
 ```
-git clone git@github.com:Jon-Makkonahi/word_document_generator_in_pyqt5-.git
+git clone git@github.com:Jon-Makkonahi/word_document_generator_in_pyqt5.git
 ```
 2. Перейдем в него 
 ```
