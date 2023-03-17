@@ -6,6 +6,10 @@ Cтруктура файлов
 
 <img width="300" alt="image" src="https://user-images.githubusercontent.com/88703195/225895896-82d7e04b-6b0b-4ee8-8809-781f02a47f6b.png">
 
+шаблонизация файлов.xlsx
+
+<img width="574" alt="image" src="https://user-images.githubusercontent.com/88703195/225896873-6ae3f556-e5bb-4500-9835-bbaca184fead.png">
+
 Скрипт
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/88703195/225896502-a55d9667-ddf0-4dbe-b426-502057289817.png">
