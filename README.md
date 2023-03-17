@@ -39,6 +39,3 @@ pip install -r requirements.txt
 ```
 auto-py-to-exe
 ```
-
-Работа скрипта:
-Данный скрипт был написано под нужны бы
