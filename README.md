@@ -22,3 +22,7 @@ source venv/Scripts/activate
 ```
 pip install -r requirements.txt
 ```
+5. Cоберите скрипт в .exe
+```
+pyinstaller --onefile script.py
+```
