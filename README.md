@@ -8,7 +8,7 @@ Cтруктура файлов
 
 шаблонизация файлов.xlsx
 
-<img width="574" alt="image" src="https://user-images.githubusercontent.com/88703195/225896873-6ae3f556-e5bb-4500-9835-bbaca184fead.png">
+<img width="575" alt="image" src="https://user-images.githubusercontent.com/88703195/225896873-6ae3f556-e5bb-4500-9835-bbaca184fead.png">
 
 Скрипт
 
