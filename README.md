@@ -35,9 +35,9 @@ source venv/Scripts/activate
 ```
 pip install -r requirements.txt
 ```
-5. Cоберите скрипт в .exe
+5. Cоберите скрипт в .exe, ввидете команду:
 ```
-pyinstaller --onefile script.py
+auto-py-to-exe
 ```
 
 Работа скрипта:
