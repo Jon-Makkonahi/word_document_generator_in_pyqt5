@@ -1,5 +1,10 @@
 # word_document_generator_in_pyqt5
 Шаблонизатор Microsoft-Word
+Данный скрипт был написан под нужны быстрого формирования документов формата .docx, c добавляением различных исправлений
+
+Cтруктура шаблонов - заготовок - итоговых файлов
+<img width="300" alt="image" src="https://user-images.githubusercontent.com/88703195/225895896-82d7e04b-6b0b-4ee8-8809-781f02a47f6b.png">
+
 
 
 Установка:
@@ -26,3 +31,6 @@ pip install -r requirements.txt
 ```
 pyinstaller --onefile script.py
 ```
+
+Работа скрипта:
+Данный скрипт был написано под нужны бы
