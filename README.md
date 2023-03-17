@@ -15,7 +15,6 @@ Cтруктура файлов
 <img width="300" alt="image" src="https://user-images.githubusercontent.com/88703195/225896502-a55d9667-ddf0-4dbe-b426-502057289817.png">
 
 
-
 Установка:
 1. Склонируйте репозиторий
 ```
