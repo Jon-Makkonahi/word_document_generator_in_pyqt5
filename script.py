@@ -12,6 +12,8 @@ SETTINGS = {}
 class TemplateWordGenerator(QtWidgets.QDialog):
     def __init__(self):
         super().__init__()
+        self.template_docx = None
+        self.context = {}
         self.resize(420, 240)
         self.setWindowTitle('Шаблонизатор Microsoft-Word')
         self.button_for_getting_a_template = QtWidgets.QPushButton('Выберите файл шаблона', self)
@@ -26,7 +28,7 @@ class TemplateWordGenerator(QtWidgets.QDialog):
         self.button_for_directory = QtWidgets.QPushButton('Выберите папку, где лежит\n"шаблонизация файлов.xlsx"', self)
         self.button_for_directory.move(120, 170)
         self.button_for_directory.clicked.connect(self.getting_for_directory)
- 
+
 
     def error_message(self, message: str):
         send_message = QtWidgets.QMessageBox()
@@ -58,7 +60,6 @@ class TemplateWordGenerator(QtWidgets.QDialog):
 
     def getting_a_template(self, path: str=None, filename_template: str=None) -> TextIOWrapper:
         try:
-            global template_docx
             # укажем файл(путь до файла, вместе с его названием)
             if filename_template == None:
                 path = QtWidgets.QFileDialog.getOpenFileName(
@@ -70,17 +71,14 @@ class TemplateWordGenerator(QtWidgets.QDialog):
             else:
                 template_file = f'{path}{filename_template}.docx'
             # получим объект файла
-            template_docx = DocxTemplate(template_file=template_file)
-            return template_docx
+            self.template_docx = DocxTemplate(template_file=template_file)
+            return self.template_docx
         except BaseException:
             self.error_message(message='Необходимо указать\n"шаблон файла.docx"')
  
 
     def getting_context_for_insertion(self, path: str=None, filename_replacement: str=None) -> dict:
         try:
-            global context
-            # объявление локальной переменной
-            context = {}
             # укажем файл(путь до файла, вместе с его названием)
             if filename_replacement == None:
                 path = QtWidgets.QFileDialog.getOpenFileName(
@@ -105,21 +103,21 @@ class TemplateWordGenerator(QtWidgets.QDialog):
                 # разбиваем строку - "ключ=значение"
                 key_value_for_context = line.split('=')
                 # создаем словарь в виде "ключ: значение"
-                context[(key_value_for_context[0]).strip()] = (key_value_for_context[1]).strip()
+                self.context[(key_value_for_context[0]).strip()] = (key_value_for_context[1]).strip()
             # закрываем файл
             file_txt.close
-            return context
+            return self.context
         except BaseException:
             self.error_message(message='Необходимо указать\n"Файл значений.txt"')
  
 
     def put_context_in_template(self) -> TextIOWrapper:
-        template_docx.render(context)
+        self.template_docx.render(self.context)
         return
 
  
     def save_new_files(self, path: str, filename_result: str) -> TextIOBase:
-        template_docx.save(f'{path}{filename_result}.docx')
+        self.template_docx.save(f'{path}{filename_result}.docx')
         return
  
 
@@ -134,7 +132,7 @@ class TemplateWordGenerator(QtWidgets.QDialog):
                 filter='DOCX File (*.docx)'
             )
             filepath = path_for_newfile[0]
-            template_docx.save(filepath)
+            self.template_docx.save(filepath)
             raise EOFError
         except EOFError:
             self.complete_message(message=f'Скрипт завершил свою работу\n')
