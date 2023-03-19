@@ -111,14 +111,12 @@ class TemplateWordGenerator(QtWidgets.QDialog):
             self.error_message(message='Необходимо указать\n"Файл значений.txt"')
  
 
-    def put_context_in_template(self) -> TextIOWrapper:
+    def put_context_in_template(self):
         self.template_docx.render(self.context)
-        return
 
  
-    def save_new_files(self, path: str, filename_result: str) -> TextIOBase:
+    def save_new_files(self, path: str, filename_result: str):
         self.template_docx.save(f'{path}{filename_result}.docx')
-        return
  
 
     def save_new_file(self) -> TextIOBase:
